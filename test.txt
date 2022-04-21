@@ -1,0 +1,39 @@
++++
+cat -n < file | grep word
+
++++
+cat -n < file | grep word   >>     file555
+
++++
+cat -n<       file| grep word>>     file555     file_exe     << >>  folen
+
+---
+echo     file"DQUOTES"'QUOTES'
+
+---
+echo     file"'DQUOTES'"'"QUOTES"'
+
+
+>>cat < file1 < file2 << STOP | grep word
+---------------- check --------------------
+heredoc >hello
+heredoc >word
+heredoc >pop
+heredoc >STOP
+word
+>>cat < file1 < file2 << STOP <file1 | grep       file        >outfile
+---------------- check --------------------
+heredoc >word
+heredoc >STOP
+>>cat file
+---------------- check --------------------
+cat: file: No such file or directory
+>>cat outfile
+---------------- check --------------------
+file11111
+>>cat -n outfile
+---------------- check --------------------
+     1	file11111
+cat: cat: No such file or directory
+     1	file11111
+>>cat -n < outfile
